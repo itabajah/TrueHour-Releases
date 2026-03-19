@@ -1,0 +1,44 @@
+---
+const links = [
+  { label: "GitHub", href: "https://github.com/itabajah/TrueHour-Releases" },
+  { label: "Security", href: "https://github.com/itabajah/TrueHour-Releases/blob/main/SECURITY.md" },
+  { label: "Contributing", href: "https://github.com/itabajah/TrueHour-Releases/blob/main/CONTRIBUTING.md" },
+  { label: "Changelog", href: "https://github.com/itabajah/TrueHour-Releases/blob/main/CHANGELOG.md" },
+];
+---
+
+<footer class="border-t border-theme">
+  <div class="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 py-12">
+    <div class="flex flex-col md:flex-row items-center justify-between gap-6">
+      <!-- Brand -->
+      <div class="flex items-center gap-3">
+        <img
+          src={`${import.meta.env.BASE_URL}/truehour-icon.png`}
+          alt="TrueHour"
+          class="w-7 h-7 rounded-md opacity-60"
+          width="28"
+          height="28"
+        />
+        <span class="text-sm text-theme-muted">
+          &copy; {new Date().getFullYear()} Tabajah Stack. All rights reserved.
+        </span>
+      </div>
+
+      <!-- Links -->
+      <div class="flex items-center gap-6">
+        {
+          links.map((link) => (
+            <a
+              href={link.href}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="text-sm text-theme-muted hover:text-theme-heading transition-colors duration-200"
+            >
+              {link.label}
+            </a>
+          ))
+        }
+      </div>
+    </div>
+  </div>
+</footer>
