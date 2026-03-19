@@ -1,0 +1,108 @@
+name: Bug report
+description: Report a reproducible issue in the released TrueHour binary
+title: "[Bug]: "
+labels:
+  - bug
+  - triage
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thank you for reporting an issue. Please fill out the sections below so we can investigate efficiently.
+
+  - type: input
+    id: app_version
+    attributes:
+      label: App version
+      description: "Release version shown in Settings or from the release tag (e.g. build-v1.0.0-r42)"
+      placeholder: build-v1.0.0-r42
+    validations:
+      required: true
+
+  - type: input
+    id: windows_version
+    attributes:
+      label: Windows version
+      description: "Windows edition and build (Settings → System → About)"
+      placeholder: Windows 11 23H2 (build 22631)
+    validations:
+      required: true
+
+  - type: dropdown
+    id: language
+    attributes:
+      label: App language
+      description: Which language is TrueHour set to?
+      options:
+        - English
+        - Hebrew (עברית)
+        - Arabic (العربية)
+    validations:
+      required: true
+
+  - type: dropdown
+    id: db_encrypted
+    attributes:
+      label: Database encryption
+      description: Is the database password-protected?
+      options:
+        - "Yes"
+        - "No"
+        - Not sure
+    validations:
+      required: false
+
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to reproduce
+      description: Numbered, minimal, deterministic steps to trigger the bug
+      placeholder: |
+        1. Open TrueHour
+        2. Navigate to ...
+        3. Click ...
+        4. Observe ...
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected behavior
+      description: What should happen?
+    validations:
+      required: true
+
+  - type: textarea
+    id: actual
+    attributes:
+      label: Actual behavior
+      description: What happens instead?
+    validations:
+      required: true
+
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Logs / screenshots
+      description: |
+        Drag and drop screenshots or error dialogs here.
+        If relevant, include the `.dat` input file (with sensitive data redacted).
+
+  - type: textarea
+    id: workaround
+    attributes:
+      label: Workaround
+      description: Have you found any workaround? If so, describe it.
+
+  - type: checkboxes
+    id: checklist
+    attributes:
+      label: Pre-submit checklist
+      options:
+        - label: I searched [existing issues](https://github.com/itabajah/TrueHour-Releases/issues) before submitting.
+          required: true
+        - label: I can reproduce this on the version listed above.
+          required: true
+        - label: This issue occurs with a non-demo database.
+          required: false

@@ -1,0 +1,29 @@
+title: Announcements
+labels:
+  - announcement
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Official announcements from the TrueHour team — release highlights, roadmap updates, and product news.
+
+        > This category is restricted to maintainers.
+  - type: textarea
+    id: summary
+    attributes:
+      label: Summary
+      description: A short paragraph for the announcement header.
+    validations:
+      required: true
+  - type: textarea
+    id: details
+    attributes:
+      label: Details
+      description: Full details, what changed, and what it means for users.
+    validations:
+      required: true
+  - type: textarea
+    id: next_steps
+    attributes:
+      label: What's next
+      description: Upcoming plans, links to releases, or calls to action.

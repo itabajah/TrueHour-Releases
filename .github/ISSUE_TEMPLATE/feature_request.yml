@@ -1,0 +1,67 @@
+name: Feature request
+description: Suggest an improvement or new capability for TrueHour
+title: "[Feature]: "
+labels:
+  - enhancement
+body:
+  - type: markdown
+    attributes:
+      value: |
+        We appreciate your ideas for improving TrueHour. Please describe your request in detail.
+
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem statement
+      description: What problem are you trying to solve? Why is this important to your workflow?
+      placeholder: "I'm always frustrated when ..."
+    validations:
+      required: true
+
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Proposed solution
+      description: Describe your ideal behavior or workflow. Be as specific as possible.
+    validations:
+      required: true
+
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternatives considered
+      description: Any workarounds, alternative designs, or third-party tools you have tried
+
+  - type: dropdown
+    id: area
+    attributes:
+      label: Feature area
+      description: Which part of TrueHour does this relate to?
+      options:
+        - Import / data parsing
+        - Timesheet / shift view
+        - Anomaly detection & resolution
+        - Dashboard / statistics
+        - Employee management
+        - Export (CSV / Excel)
+        - Settings / configuration
+        - Licensing / activation
+        - Update mechanism
+        - Localization / language
+        - Other
+    validations:
+      required: true
+
+  - type: textarea
+    id: context
+    attributes:
+      label: Additional context
+      description: Screenshots, mockups, example data, or business context that helps illustrate the request
+
+  - type: checkboxes
+    id: checklist
+    attributes:
+      label: Pre-submit checklist
+      options:
+        - label: I searched [existing issues](https://github.com/itabajah/TrueHour-Releases/issues) and [discussions](https://github.com/itabajah/TrueHour-Releases/discussions) for similar requests.
+          required: true

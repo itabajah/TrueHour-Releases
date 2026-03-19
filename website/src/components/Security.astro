@@ -1,0 +1,71 @@
+---
+const badges = [
+  {
+    title: "Offline-First",
+    description: "No internet connection required. Ever. Your data never touches a server.",
+    icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" class="w-8 h-8">
+      <path stroke-linecap="round" stroke-linejoin="round" d="M8.288 15.038a5.25 5.25 0 017.424 0M5.106 11.856c3.807-3.808 9.98-3.808 13.788 0M1.924 8.674c5.565-5.565 14.587-5.565 20.152 0" />
+      <line x1="4" y1="4" x2="20" y2="20" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+    </svg>`,
+  },
+  {
+    title: "AES-256 Encrypted",
+    description: "Bank-grade SQLCipher encryption. Database unreadable without your password.",
+    icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" class="w-8 h-8">
+      <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z" />
+    </svg>`,
+  },
+  {
+    title: "Digitally Signed",
+    description: "Authenticode-verified Windows binary. Tamper-proof from build to execution.",
+    icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" class="w-8 h-8">
+      <path stroke-linecap="round" stroke-linejoin="round" d="M7.864 4.243A7.5 7.5 0 0119.5 10.5c0 2.92-.556 5.709-1.568 8.268M5.742 6.364A7.465 7.465 0 004.5 10.5a48.667 48.667 0 00-1.079 8.04M4.75 19.662a48.807 48.807 0 013.478-.397m7.5 0v-.916c0-1.18-.91-2.164-2.09-2.201a51.964 51.964 0 00-3.32 0c-1.18.037-2.09 1.022-2.09 2.201v.916m7.5 0a48.667 48.667 0 002.25-.056m-9.976.056c-.763.022-1.524.056-2.25.056" />
+    </svg>`,
+  },
+];
+---
+
+<section id="security" class="section-padding relative">
+  <div class="max-w-6xl mx-auto">
+    <!-- Header -->
+    <div class="text-center mb-16">
+      <h2
+        data-animate="fade-up"
+        class="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-theme-heading mb-4"
+      >
+        Your data never leaves
+        <br />
+        <span class="text-accent">your machine.</span>
+      </h2>
+      <p data-animate="fade-up" class="text-theme-muted text-lg max-w-xl mx-auto mt-4">
+        TrueHour runs entirely on your computer. No cloud. No subscriptions. No tracking.
+      </p>
+    </div>
+
+    <!-- Trust Badges -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
+      {
+        badges.map((badge) => (
+          <div
+            data-animate="stagger-up"
+            class="glass-card p-8 text-center group hover:bg-white/[0.06]
+                   transition-all duration-500 hover:-translate-y-1"
+          >
+            <div class="w-16 h-16 rounded-full bg-success/10 flex items-center justify-center
+                        mx-auto mb-6 text-success group-hover:bg-success/20 transition-colors duration-500">
+              <Fragment set:html={badge.icon} />
+            </div>
+            <h3 class="text-xl font-semibold text-theme-heading mb-3">{badge.title}</h3>
+            <p class="text-theme-muted text-sm leading-relaxed">{badge.description}</p>
+          </div>
+        ))
+      }
+    </div>
+  </div>
+
+  <!-- Background glow -->
+  <div
+    class="absolute top-1/2 left-1/4 w-[400px] h-[400px] bg-success/5 rounded-full blur-[100px] pointer-events-none"
+    aria-hidden="true"
+  ></div>
+</section>

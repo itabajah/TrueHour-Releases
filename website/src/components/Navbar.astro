@@ -1,0 +1,216 @@
+---
+const links = [
+  { href: "#features", label: "Features" },
+  { href: "#security", label: "Security" },
+  { href: "#download", label: "Download" },
+];
+---
+
+<nav
+  id="navbar"
+  class="fixed top-0 left-0 right-0 z-50 transition-all duration-500"
+>
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12">
+    <div class="flex items-center justify-between h-14 sm:h-16 lg:h-20">
+      <!-- Logo -->
+      <a href="#" class="flex items-center gap-2 sm:gap-3 group">
+        <img
+          src={`${import.meta.env.BASE_URL}/truehour-icon.png`}
+          alt="TrueHour"
+          class="w-8 h-8 sm:w-9 sm:h-9 rounded-lg transition-transform duration-300 group-hover:scale-110"
+          width="36"
+          height="36"
+        />
+        <span class="text-lg sm:text-xl font-bold text-theme-heading tracking-tight">TrueHour</span>
+      </a>
+
+      <!-- Desktop Links + Toggle -->
+      <div class="hidden md:flex items-center gap-8">
+        {
+          links.map((link) => (
+            <a
+              href={link.href}
+              class="text-sm font-medium text-theme-muted hover:text-theme-heading transition-colors duration-200"
+            >
+              {link.label}
+            </a>
+          ))
+        }
+
+        <!-- Theme Toggle -->
+        <button
+          id="theme-toggle"
+          aria-label="Toggle light/dark mode"
+          class="relative w-10 h-10 rounded-full flex items-center justify-center
+                 transition-all duration-300 hover:scale-110 active:scale-95
+                 border border-theme glass-card"
+        >
+          <!-- Sun icon (shown in dark mode — click to go light) -->
+          <svg id="icon-sun" class="w-[18px] h-[18px] text-amber-400 absolute transition-all duration-300" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round">
+            <circle cx="12" cy="12" r="4" />
+            <path d="M12 2v2M12 20v2M4 12H2M22 12h-2M6.34 6.34L4.93 4.93M19.07 4.93l-1.41 1.41M6.34 17.66l-1.41 1.41M19.07 19.07l-1.41-1.41" />
+          </svg>
+          <!-- Moon icon (shown in light mode — click to go dark) -->
+          <svg id="icon-moon" class="w-[18px] h-[18px] text-primary absolute transition-all duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M21.752 15.002A9.718 9.718 0 0118 15.75c-5.385 0-9.75-4.365-9.75-9.75 0-1.33.266-2.597.748-3.752A9.753 9.753 0 003 11.25C3 16.635 7.365 21 12.75 21a9.753 9.753 0 009.002-5.998z" />
+          </svg>
+        </button>
+
+        <a
+          href="https://github.com/itabajah/TrueHour-Releases/releases/latest/download/TrueHour.exe"
+          class="px-5 py-2 text-sm font-semibold bg-accent hover:bg-accent-hover text-white
+                 rounded-lg transition-all duration-300 hover:shadow-lg hover:shadow-accent/20"
+          aria-label="Download TrueHour for Windows (.exe)"
+        >
+          Get TrueHour
+        </a>
+      </div>
+
+      <!-- Mobile: Theme Toggle + Hamburger -->
+      <div class="md:hidden flex items-center gap-2">
+        <button
+          id="theme-toggle-mobile"
+          aria-label="Toggle light/dark mode"
+          class="relative w-8 h-8 rounded-full flex items-center justify-center
+                 border border-theme glass-card transition-all duration-300"
+        >
+          <svg class="icon-sun-m w-4 h-4 text-amber-400 absolute transition-all duration-300" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round">
+            <circle cx="12" cy="12" r="4" />
+            <path d="M12 2v2M12 20v2M4 12H2M22 12h-2M6.34 6.34L4.93 4.93M19.07 4.93l-1.41 1.41M6.34 17.66l-1.41 1.41M19.07 19.07l-1.41-1.41" />
+          </svg>
+          <svg class="icon-moon-m w-4 h-4 text-primary absolute transition-all duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M21.752 15.002A9.718 9.718 0 0118 15.75c-5.385 0-9.75-4.365-9.75-9.75 0-1.33.266-2.597.748-3.752A9.753 9.753 0 003 11.25C3 16.635 7.365 21 12.75 21a9.753 9.753 0 009.002-5.998z" />
+          </svg>
+        </button>
+        <button
+          id="mobile-toggle"
+          class="flex flex-col gap-1.5 p-2"
+          aria-label="Toggle menu"
+          aria-expanded="false"
+          aria-controls="mobile-menu"
+        >
+          <span class="block w-6 h-0.5 bg-theme-heading transition-transform duration-300 origin-center"></span>
+          <span class="block w-6 h-0.5 bg-theme-heading transition-opacity duration-300"></span>
+          <span class="block w-6 h-0.5 bg-theme-heading transition-transform duration-300 origin-center"></span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Mobile Menu -->
+  <div
+    id="mobile-menu"
+    class="md:hidden overflow-hidden max-h-0 transition-all duration-500"
+    style="background: var(--nav-solid-bg); backdrop-filter: blur(20px);"
+  >
+    <div class="px-4 sm:px-6 py-5 flex flex-col gap-3">
+      {
+        links.map((link) => (
+          <a
+            href={link.href}
+            class="mobile-link text-lg font-medium text-theme-muted hover:text-theme-heading transition-colors"
+          >
+            {link.label}
+          </a>
+        ))
+      }
+      <a
+        href="https://github.com/itabajah/TrueHour-Releases/releases/latest/download/TrueHour.exe"
+        class="btn-primary text-center mt-2"
+      >
+        Get TrueHour
+      </a>
+    </div>
+  </div>
+</nav>
+
+<style>
+  /* Theme toggle icon states — light mode default: show moon, hide sun */
+  #icon-sun, .icon-sun-m {
+    opacity: 0; transform: rotate(-90deg) scale(0.5);
+  }
+  #icon-moon, .icon-moon-m {
+    opacity: 1; transform: rotate(0deg) scale(1);
+  }
+  /* Dark mode: show sun, hide moon */
+  :global(.dark) #icon-sun, :global(.dark) .icon-sun-m {
+    opacity: 1; transform: rotate(0deg) scale(1);
+  }
+  :global(.dark) #icon-moon, :global(.dark) .icon-moon-m {
+    opacity: 0; transform: rotate(90deg) scale(0.5);
+  }
+</style>
+
+<script>
+  function initNavbar() {
+    const nav = document.getElementById("navbar");
+    const toggle = document.getElementById("mobile-toggle");
+    const menu = document.getElementById("mobile-menu");
+    if (!nav || !toggle || !menu) return;
+
+    const spans = toggle.querySelectorAll("span");
+    let open = false;
+
+    // Scroll: transparent → solid
+    const onScroll = () => {
+      if (window.scrollY > 50) {
+        nav.style.background = "var(--nav-solid-bg)";
+        nav.style.backdropFilter = "blur(20px)";
+        nav.style.boxShadow = "0 4px 30px rgba(0,0,0,0.1)";
+      } else {
+        nav.style.background = "";
+        nav.style.backdropFilter = "";
+        nav.style.boxShadow = "";
+      }
+    };
+    window.addEventListener("scroll", onScroll, { passive: true });
+    onScroll();
+
+    // Mobile toggle
+    toggle.addEventListener("click", () => {
+      open = !open;
+      if (open) {
+        menu.style.maxHeight = menu.scrollHeight + "px";
+        toggle.setAttribute("aria-expanded", "true");
+        spans[0].style.transform = "rotate(45deg) translateY(4px)";
+        spans[1].style.opacity = "0";
+        spans[2].style.transform = "rotate(-45deg) translateY(-4px)";
+      } else {
+        menu.style.maxHeight = "0";
+        toggle.setAttribute("aria-expanded", "false");
+        spans[0].style.transform = "";
+        spans[1].style.opacity = "";
+        spans[2].style.transform = "";
+      }
+    });
+
+    // Close on link click
+    menu.querySelectorAll("a").forEach((a) => {
+      a.addEventListener("click", () => {
+        open = false;
+        menu.style.maxHeight = "0";
+        toggle.setAttribute("aria-expanded", "false");
+        spans[0].style.transform = "";
+        spans[1].style.opacity = "";
+        spans[2].style.transform = "";
+      });
+    });
+
+    // Theme toggle
+    function toggleTheme() {
+      const html = document.documentElement;
+      const isDark = html.classList.contains("dark");
+      if (isDark) {
+        html.classList.remove("dark");
+        localStorage.setItem("truehour-theme", "light");
+      } else {
+        html.classList.add("dark");
+        localStorage.setItem("truehour-theme", "dark");
+      }
+    }
+
+    document.getElementById("theme-toggle")?.addEventListener("click", toggleTheme);
+    document.getElementById("theme-toggle-mobile")?.addEventListener("click", toggleTheme);
+  }
+  document.addEventListener("DOMContentLoaded", initNavbar);
+</script>

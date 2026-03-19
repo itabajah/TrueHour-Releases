@@ -1,0 +1,104 @@
+---
+import { getAppVersion } from "../consts";
+const APP_VERSION = await getAppVersion();
+
+interface Props {
+  title?: string;
+  description?: string;
+}
+
+const {
+  title = "TrueHour — Time Tracking, Simplified",
+  description = "Smart attendance management for small teams. One file. Zero complexity. Offline-first with AES-256 encryption.",
+} = Astro.props;
+
+const siteUrl = "https://itabajah.github.io/TrueHour-Releases";
+const ogImage = `${siteUrl}/og-image.png`;
+---
+
+<!doctype html>
+<html lang="en" class="antialiased dark">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content={description} />
+    <meta name="theme-color" content="#0a0e17" />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={siteUrl} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={ogImage} />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={ogImage} />
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href={`${import.meta.env.BASE_URL}/favicon.ico`} />
+
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="preload"
+      as="style"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+      onload="this.rel='stylesheet'"
+    />
+    <noscript>
+      <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet"
+      />
+    </noscript>
+
+    <title>{title}</title>
+
+    <!-- JSON-LD Structured Data -->
+    <script
+      type="application/ld+json"
+      set:html={JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        name: "TrueHour",
+        applicationCategory: "BusinessApplication",
+        operatingSystem: "Windows 10+",
+        description: description,
+        url: siteUrl,
+        downloadUrl:
+          "https://github.com/itabajah/TrueHour-Releases/releases/latest/download/TrueHour.exe",
+        softwareVersion: APP_VERSION,
+        author: {
+          "@type": "Organization",
+          name: "Tabajah Stack",
+        },
+        offers: {
+          "@type": "Offer",
+          price: "0",
+          priceCurrency: "USD",
+          description: "Download available — contact for activation",
+        },
+      })}
+    />
+  </head>
+  <body>
+    <slot />
+    <script is:inline>
+      // Theme: persist choice, default to dark
+      (function() {
+        const stored = localStorage.getItem('truehour-theme');
+        const html = document.documentElement;
+        if (stored === 'light') {
+          html.classList.remove('dark');
+        } else {
+          html.classList.add('dark');
+          if (!stored) localStorage.setItem('truehour-theme', 'dark');
+        }
+      })();
+    </script>
+  </body>
+</html>

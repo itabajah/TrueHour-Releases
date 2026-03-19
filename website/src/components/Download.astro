@@ -1,0 +1,82 @@
+---
+import { getAppVersion } from "../consts";
+const APP_VERSION = await getAppVersion();
+---
+
+<section id="download" class="section-padding relative">
+  <div class="max-w-3xl mx-auto text-center">
+    <!-- Decorative ring -->
+    <div
+      class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px]
+             rounded-full border border-theme pointer-events-none"
+      aria-hidden="true"
+    ></div>
+    <div
+      class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[350px] h-[350px]
+             rounded-full border border-theme pointer-events-none"
+      aria-hidden="true"
+    ></div>
+
+    <div data-animate="fade-up" class="relative">
+      <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-theme-heading mb-4">
+        Ready to get started?
+      </h2>
+      <p class="text-theme-muted text-lg mb-10 max-w-lg mx-auto">
+        Download TrueHour and try it instantly in demo mode — no activation required.
+      </p>
+
+      <!-- CTA -->
+      <a
+        href="https://github.com/itabajah/TrueHour-Releases/releases/latest/download/TrueHour.exe"
+        download
+        class="btn-primary text-lg inline-flex glow-accent"
+        aria-label="Download TrueHour for Windows (.exe)"
+      >
+        <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
+        </svg>
+        Download for Windows
+        <span class="text-sm font-normal opacity-70">v{APP_VERSION}</span>
+      </a>
+
+      <!-- Demo mode note -->
+      <div class="mt-6 inline-flex items-center gap-2 px-4 py-2 rounded-full glass-card text-sm text-theme-muted">
+        <svg class="w-4 h-4 text-success" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+        </svg>
+        Click "Try Demo Mode" on the activation screen to explore all features
+      </div>
+
+      <!-- System Requirements -->
+      <div class="mt-8 flex flex-wrap items-center justify-center gap-6 text-sm text-theme-muted">
+        <div class="flex items-center gap-2">
+          <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M9 17.25v1.007a3 3 0 01-.879 2.122L7.5 21h9l-.621-.621A3 3 0 0115 18.257V17.25m6-12V15a2.25 2.25 0 01-2.25 2.25H5.25A2.25 2.25 0 013 15V5.25A2.25 2.25 0 015.25 3h13.5A2.25 2.25 0 0121 5.25z" />
+          </svg>
+          Windows 10+
+        </div>
+        <div class="flex items-center gap-2">
+          <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M20.25 6.375c0 2.278-3.694 4.125-8.25 4.125S3.75 8.653 3.75 6.375m16.5 0c0-2.278-3.694-4.125-8.25-4.125S3.75 4.097 3.75 6.375m16.5 0v11.25c0 2.278-3.694 4.125-8.25 4.125s-8.25-1.847-8.25-4.125V6.375m16.5 0v3.75m-16.5-3.75v3.75m16.5 0v3.75C20.25 16.153 16.556 18 12 18s-8.25-1.847-8.25-4.125v-3.75m16.5 0c0 2.278-3.694 4.125-8.25 4.125s-8.25-1.847-8.25-4.125" />
+          </svg>
+          ~60 MB
+        </div>
+        <div class="flex items-center gap-2">
+          <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 5.25a3 3 0 013 3m3 0a6 6 0 01-7.029 5.912c-.563-.097-1.159.026-1.563.43L10.5 17.25H8.25v2.25H6v2.25H2.25v-2.818c0-.597.237-1.17.659-1.591l6.499-6.499c.404-.404.527-1 .43-1.563A6 6 0 1121.75 8.25z" />
+          </svg>
+          No admin rights needed
+        </div>
+      </div>
+
+      <p class="mt-6 text-sm text-theme-muted opacity-70">
+        For full activation, <a
+          href="https://github.com/itabajah/TrueHour-Releases/discussions"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="text-primary-light hover:text-theme-heading transition-colors underline underline-offset-4"
+        >contact us directly</a>.
+      </p>
+    </div>
+  </div>
+</section>
