@@ -1,0 +1,23 @@
+{
+  "name": "truehour-website",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "typecheck": "astro check"
+  },
+  "dependencies": {
+    "@astrojs/sitemap": "^3.7.1",
+    "@astrojs/tailwind": "^6.0.2",
+    "astro": "^5.7.10",
+    "gsap": "^3.12.7",
+    "tailwindcss": "^3.4.17",
+    "three": "^0.172.0"
+  },
+  "devDependencies": {
+    "@types/three": "^0.172.0"
+  }
+}

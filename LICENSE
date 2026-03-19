@@ -1,0 +1,26 @@
+# TrueHour Binary Distribution License
+
+Copyright (c) 2026 Tabajah Stack. All rights reserved.
+
+This repository distributes compiled TrueHour binaries and related release assets.
+No source code license grant is provided by this repository.
+
+You may download and use the released TrueHour binary internally for evaluation
+or business operations, subject to any activation, subscription, or commercial
+terms provided by the publisher.
+
+You may not:
+
+1. Reverse engineer, decompile, disassemble, or attempt to derive source code,
+   except where such restriction is prohibited by applicable law.
+2. Redistribute, sublicense, lease, rent, sell, or otherwise transfer released
+   binaries to third parties without prior written permission.
+3. Remove or alter proprietary notices, digital signatures, or integrity metadata.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO WARRANTIES OF MERCHANTABILITY, FITNESS
+FOR A PARTICULAR PURPOSE, AND NON-INFRINGEMENT.
+IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE FOR ANY CLAIM,
+DAMAGES, OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT, OR
+OTHERWISE, ARISING FROM, OUT OF, OR IN CONNECTION WITH THE SOFTWARE OR THE USE
+OR OTHER DEALINGS IN THE SOFTWARE.
