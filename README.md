@@ -33,6 +33,7 @@ TrueHour is a standalone Windows desktop application that takes raw attendance l
 | Category | What you get |
 |----------|-------------|
 | **Smart Import** | Drag-and-drop `.dat` files from ZKTeco terminals. Automatic merge and deduplication — importing the same file twice is safe. |
+| **Terminal Sync (Ethernet)** | Pull attendance straight from the ZKTeco terminal over the network — manually, with a preview, or automatically every few minutes. The terminal is only read. |
 | **Employee Management** | Auto-detects new worker IDs on import. Set names, hourly or daily pay rates. |
 | **Timesheet View** | Full shift grid with filters by employee, date range, and status. Color-coded anomaly and edit indicators. |
 | **Anomaly Detection** | Flags missing logouts/logins, short/long shifts, unusual durations, and invalid time ranges. Severity-coded (critical, warning, info). |

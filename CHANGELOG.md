@@ -5,7 +5,7 @@ All notable changes to TrueHour releases are documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project follows semantic versioning for release labels.
 
-## [Unreleased]
+## [1.0.1] — 2026-09-25
 
 ### Added
 
@@ -42,5 +42,6 @@ and this project follows semantic versioning for release labels.
 - Single-instance mutex lock per database to prevent concurrent corruption.
 - Community channels: GitHub Issues (bug report and feature request templates), GitHub Discussions (Q&A, Ideas, Announcements).
 
-[Unreleased]: https://github.com/itabajah/TrueHour-Releases/compare/v1.0.0...HEAD
+[Unreleased]: https://github.com/itabajah/TrueHour-Releases/compare/v1.0.1...HEAD
+[1.0.1]: https://github.com/itabajah/TrueHour-Releases/releases/tag/v1.0.1
 [1.0.0]: https://github.com/itabajah/TrueHour-Releases/releases/tag/v1.0.0
