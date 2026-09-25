@@ -5,7 +5,17 @@ All notable changes to TrueHour releases are documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project follows semantic versioning for release labels.
 
-<!-- ## [Unreleased] -->
+## [Unreleased]
+
+### Added
+
+- Terminal Sync (Ethernet): pull attendance straight from a ZKTeco biometric terminal over the network (ZK protocol, TCP or UDP port 4370) instead of carrying a `.dat` file on a USB stick. **Sync from Terminal** imports only new punches, **Preview Terminal Data** opens them in the regular import preview, and an optional automatic sync runs every few minutes while TrueHour is open. The terminal is only read; TrueHour never changes it.
+- Terminal Connection dialog (Settings → Biometric Terminal) with **Test Connection**: device name, serial number, firmware, record counts and a clock check.
+- New employees found on the terminal are named from the terminal's user list.
+
+### Changed
+
+- Punches with impossible dates (made while the terminal's clock was reset to 2000 or to a far-future date) are held back and reported instead of imported, and TrueHour warns when the terminal clock differs from the PC's.
 
 ## [1.0.0] — 2026-03-15
 
