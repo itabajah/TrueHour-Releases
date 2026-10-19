@@ -5,6 +5,34 @@ All notable changes to TrueHour releases are documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project follows semantic versioning for release labels.
 
+## [1.1.0] — 2026-10-19
+
+### Added
+
+- Optional pay rules (Settings → Payroll): unpaid break, rounding, daily overtime. All are off until you turn them on.
+- Pay changes from a date: workdays before the date keep the old pay, and the dialog shows the pay history.
+- Lock a paid period so imports, syncs and edits can no longer change it; **Recalculate period** applies changed pairing settings to a past period, with a preview of every change.
+- Settings in tabs, keyboard shortcuts, and an optional second backup location.
+
+### Changed
+
+- Night shifts are paired across midnight, whatever order files and terminal syncs arrive in.
+- Your corrections (edited times, added or deleted shifts, notes) survive new imports.
+- Hours and pay are rounded exactly like Excel; the Dashboard, CSV and Excel always agree.
+- **Resolve All** shows what it will do before it runs, and never invents long shifts.
+- Better Hebrew and Arabic layout, including right-to-left message boxes.
+- Your license survives common PC changes such as a new network adapter, dock or Bluetooth dongle.
+
+### Fixed
+
+- Backups are checked after they are written; the database is checked at every start, and a damaged one can be restored from a backup.
+- Updates are installed only when they carry TrueHour's signature, and the app restarts cleanly after an update.
+
+### Upgrading
+
+- Your data, settings, password and license are kept, and a copy of the database is saved before it is upgraded.
+- Shifts from earlier versions stay as they are. To re-pair a past period with the new rules, use **Export → Recalculate period**; if earlier versions left overlapping shifts, the Anomalies page lists the months to recalculate.
+
 ## [1.0.1] — 2026-09-25
 
 ### Added
