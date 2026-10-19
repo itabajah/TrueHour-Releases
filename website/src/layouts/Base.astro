@@ -100,5 +100,23 @@ const ogImage = `${siteUrl}/og-image.png`;
         }
       })();
     </script>
+    <script is:inline>
+      // The version is baked in at build time; show the latest release even when
+      // the site was not rebuilt after it (the download link always serves the latest).
+      (function() {
+        var targets = document.querySelectorAll('[data-app-version]');
+        if (!targets.length || !window.fetch) return;
+        fetch('https://api.github.com/repos/itabajah/TrueHour-Releases/releases/latest', {
+          headers: { Accept: 'application/vnd.github+json' }
+        })
+          .then(function(res) { return res.ok ? res.json() : null; })
+          .then(function(data) {
+            var tag = data && typeof data.tag_name === 'string' ? data.tag_name.replace(/^v/, '') : '';
+            if (!/^\d+\.\d+\.\d+$/.test(tag)) return;
+            targets.forEach(function(el) { el.textContent = tag; });
+          })
+          .catch(function() {});
+      })();
+    </script>
   </body>
 </html>

@@ -29,7 +29,7 @@ const { appVersion } = Astro.props;
              glass-card text-xs sm:text-sm text-theme-muted"
     >
       <span class="w-2 h-2 rounded-full bg-success animate-pulse"></span>
-      v{appVersion} - Now Available for Windows
+      <span>v<span data-app-version>{appVersion}</span> - Now Available for Windows</span>
     </div>
 
     <!-- Headline -->
